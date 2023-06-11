@@ -123,6 +123,7 @@ namespace SportShop.Controllers
             return _response;
         }
 
+        // servicio rest
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

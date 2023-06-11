@@ -185,6 +185,25 @@ namespace SportShop.Controllers
         }
 
 
+        [HttpPost("SaveImage")]
+        public async Task<String> SaveImage([FromForm] UploadImage uploadImage)
+        {
+
+            var route = String.Empty;
+
+            if (uploadImage.file.Length > 0)
+            {
+                var fileName = Guid.NewGuid().ToString() + ".png";
+                route = $"Images/{fileName}";
+
+                using (var stream = new FileStream(route, FileMode.Create))
+                {
+                    await uploadImage.file.CopyToAsync(stream);
+                }
+            }
+
+            return route;
+        }
 
     }
 }

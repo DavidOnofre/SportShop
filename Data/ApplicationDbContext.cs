@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SportShop.Models;
 using SportsShop.Models;
+
 
 namespace SportsShop.Data
 {
@@ -11,6 +13,8 @@ namespace SportsShop.Data
         }
 
         public DbSet<Sport> Sport { get; set; }
+
+        public DbSet<Image> Image { get; set; }
     }
 
    
